@@ -48,6 +48,14 @@ public class UserContoller {
     @CrossOrigin("*")
     public String deleteMethod(@PathVariable("userId") int uId){
         return this.userService.deleteUser(uId);
-    }    
+    }  
+    @PostMapping("/signup")
+    public User Signup(@RequestBody User user){
+        return this.userService.registerUser(user.name, user.email, user.password);
+    }
+    @PostMapping("/login")
+    public String login(@RequestBody User user){
+        return this.userService.loginUser(user.email, user.password);
+    }
     
 }

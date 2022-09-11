@@ -6,4 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.example.backend.entity.User;
 
 @Repository
-public interface UserRepository extends CrudRepository<User,Integer> { }
+public interface UserRepository extends CrudRepository<User,Integer> {
+    public User findByEmail(String email);
+ }
